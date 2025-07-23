@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Person Profile Form</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 400px;
+    }
+    td, th {
+      border: 1px solid #000;
+      padding: 8px;
+    }
+    th {
+      text-align: center;
+      font-size: 1.2em;
+    }
+    input[type="text"], input[type="email"], select {
+      width: 100%;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <th colspan="2">PERSON PROFILE</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><input type="text" name="name" required></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Date of Birth</td>
+        <td>
+          <input type="number" name="dob_day" min="1" max="31" placeholder="dd" style="width: 30px;" required> /
+          <input type="number" name="dob_month" min="1" max="12" placeholder="mm" style="width: 30px;" required> /
+          <input type="number" name="dob_year" min="1900" max="2100" placeholder="yyyy" style="width: 50px;" required>
+          <span style="font-size: 0.8em;">(dd/mm/yyyy)</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Blood Group</td>
+        <td>
+          <select name="blood_group" required>
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Degree</td>
+        <td>
+          <label><input type="checkbox" name="degree" value="SSC"> SSC</label>
+          <label><input type="checkbox" name="degree" value="HSC"> HSC</label>
+          <label><input type="checkbox" name="degree" value="BSc"> BSc.</label>
+          <label><input type="checkbox" name="degree" value="MSc"> MSc.</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Photo</td>
+        <td><input type="file" name="photo" accept="image/*" required></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="center">
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
