@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Login Example</title>
+  </head>
+  <body>
+    <h1>JS Example</h1>
+
+    <form>
+      Username: <input type="text" id="username" /><br /><br />
+      Password: <input type="password" id="password" /><br /><br />
+      <input type="button" value="Submit" onclick="change()" />
+    </form>
+
+    <script>
+      function change() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        if (username.length !== 10 || password.length !== 10) {
+          alert("Username and Password must be exactly 10 characters long.");
+          return;
+        }
+
+        let head = document.getElementsByTagName("h1")[0];
+        head.innerHTML = "Welcome, " + username;
+
+        console.log("Password entered:", password);
+      }
+    </script>
+  </body>
+</html>
