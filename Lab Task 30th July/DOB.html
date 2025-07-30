@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date of Birth Form</title>
+  </head>
+  <body>
+    <fieldset style="width: 300px">
+      <legend>Date of Birth</legend>
+      <form id="dobForm">
+        <input type="number" id="day" placeholder="dd" min="1" max="31" />
+        <input type="number" id="month" placeholder="mm" min="1" max="12" />
+        <input
+          type="number"
+          id="year"
+          placeholder="yyyy"
+          min="1900"
+          max="2016"
+        />
+        <br />
+        <span id="dobError" style="color: red"></span>
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+
+    <script>
+      document.getElementById("dobForm");
+      document.addEventListener("submit", function (event) {
+        let dayValue = document.getElementById("day").value;
+        let monthValue = document.getElementById("month").value;
+        let yearValue = document.getElementById("year").value;
+
+        let errorMessage = document.getElementById("dobError");
+
+        errorMessage.textContent = "";
+
+        if (dayValue === "" || monthValue === "" || yearValue === "") {
+          event.preventDefault();
+          errorMessage.textContent = "Please enter full date of birth.";
+        }
+      });
+    </script>
+  </body>
+</html>
