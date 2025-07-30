@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Degree Selection Form</title>
+  </head>
+  <body>
+    <fieldset style="width: 300px">
+      <legend>Degree</legend>
+      <form id="degreeForm">
+        <label>Degree:</label><br />
+
+        <input type="checkbox" name="degree" value="SSC" /> SSC
+        <input type="checkbox" name="degree" value="HSC" /> HSC
+        <input type="checkbox" name="degree" value="BSc" /> BSc
+        <input type="checkbox" name="degree" value="MSc" /> MSc
+
+        <br />
+        <span id="degreeError" style="color: red"></span>
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+
+    <script>
+      document.getElementById("degreeForm");
+      document.addEventListener("submit", function (event) {
+        let selectedDegrees = document.querySelectorAll(
+          "input[name='degree']:checked"
+        );
+
+        let errorMessage = document.getElementById("degreeError");
+
+        errorMessage.textContent = "";
+
+        if (selectedDegrees.length == 0) {
+          event.preventDefault();
+          errorMessage.textContent = "Select at least one degree.";
+        }
+      });
+    </script>
+  </body>
+</html>

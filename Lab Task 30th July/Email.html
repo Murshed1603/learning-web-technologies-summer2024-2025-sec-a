@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Validation Form</title>
+  </head>
+  <body>
+    <h3>Email</h3>
+    <form id="emailForm">
+      <label for="email">Email: </label>
+      <input type="email" id="email" required />
+      <br />
+      <span id="emailError" style="color: red"></span>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      document.getElementById("emailForm");
+      document.addEventListener("submit", function (event) {
+        let emailInput = document.getElementById("email");
+        let emailValue = emailInput.value.trim();
+        let errorMessage = document.getElementById("emailError");
+
+        errorMessage.textContent = "";
+
+        if (emailValue === "" || !emailValue.includes("@")) {
+          event.preventDefault();
+          errorMessage.textContent = "Valid email is required.";
+        }
+      });
+    </script>
+  </body>
+</html>
